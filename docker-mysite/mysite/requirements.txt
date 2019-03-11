@@ -1,0 +1,6 @@
+django
+configparser
+gunicorn
+requests
+progressbar
+psycopg2
