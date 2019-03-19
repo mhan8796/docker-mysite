@@ -1,0 +1,100 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Confluence Admin Finder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- get apricot css -->
+    <link type="text/css" rel="stylesheet" href="https://mango.collegeboard.org/apricot/prod/3.4.0/css/apricot.css" media="all">
+  </head>
+
+  <body class="align">
+
+    <!-- get jquery --> 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- get apricot js -->
+    <script type="text/javascript" src="https://mango.collegeboard.org/apricot/prod/3.4.0/js/apricot.js"></script>
+
+
+    <div class="cb-local-navigation">
+      <div class="container">
+        <nav aria-label="CB Local Navigation" class="cb-desktop-navigation">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="cb-site-name">
+                <a class="title cb-program-name" href="{% url 'info:confluence-admin' %}">
+                  <span>Confluence Admin Finder</span>
+                </a>
+              </div>
+              <ul class="cb-local-menu">
+              
+                <li>
+                  <a href="{% url 'info:index' %}">
+                    <i class="cb-glyph cb-home" aria-hidden="true"></i>
+                    <span>Home</span>
+                  </a>
+                </li>
+
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <span>Admin Finder</span>
+                    <i class="cb-glyph cb-down" aria-hidden="true"></i>
+                    <i class="cb-glyph cb-up hidden" aria-hidden="true"></i>
+                  </a>
+                  <ul class="dropdown-menu">
+
+                    <li>
+                      <a href="{% url 'info:bitbucket-admin' %}">
+                        <span>BitBucket Admin Finder</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="{% url 'info:confluence-admin' %}">
+                        <span>Confluence/Wiki Admin Finder</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="{% url 'info:jira-admin' %}">
+                        <span>Jira Admin Finder</span>
+                      </a>
+                    </li>
+
+                  </ul>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+
+    <div class="container cb-panel-gray">
+      <div class="panel cb-panel-blue">
+        <div class="panel-heading">
+          <h3 class="panel-title">Enter Confluence/Wiki Space Key or Name or ID</h3>
+        </div>
+        <div class="panel-body">
+          <form role="form" action="/info/confluence-admin/" method="post">
+              <div class="form-group">
+                <div class="cb-input-search">
+                  {% csrf_token %}
+                  {{ form }}
+                  <i class="cb-glyph cb-search" aria-hidden="true"></i>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-sm btn-primary">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+  </body>
+</html>

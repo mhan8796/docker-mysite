@@ -1,0 +1,33 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- get apricot css -->
+    <link type="text/css" rel="stylesheet" href="https://mango.collegeboard.org/apricot/prod/3.4.0/css/apricot.css" media="all">
+  </head>
+
+  <body class="align">
+
+    <!-- get jquery --> 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- get apricot js -->
+    <script type="text/javascript" src="https://mango.collegeboard.org/apricot/prod/3.4.0/js/apricot.js"></script>
+
+
+    <div class="alert alert-danger cb-alert-heading" role="alert">
+      <h2>Space Not Found</h2>
+      <p>The space info you entered does not map to a space</p>
+          <ul class="cb-list-style">
+              <li><a href="{% url 'info:bitbucket-admin' %}" class="alert-link">BitBucket Admin Finder</a></li>
+              <li><a href="{% url 'info:confluence-admin' %}" class="alert-link">Confluence/Wiki Admin Finder</a></li>
+              <li><a href="{% url 'info:jira-admin' %}" class="alert-link">Jira Admin Finder</a></li>
+          </ul>
+    </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,46 @@
+docker run -p 80:8000 mysite
+
+# load an image from tar file
+docker load -i mysite.tar
+
+# save an image to a tar file
+docker save -o mysite.tar mysite
+
+# start a docker machine
+docker-machine --debug create --driver amazonec2 \
+--amazonec2-subnet-id ... \
+--amazonec2-vpc-id ... \
+--amazonec2-access-key ... \
+--amazonec2-secret-key ... \
+--amazonec2-security-group docker-machine \
+--amazonec2-private-address-only \
+ray-app
+
+# remove all docker volumes
+docker volume rm $(docker volume ls -q)
+
+# remove all docker processes
+docker rm $(docker ps -aq)
+
+# stop all docker processes
+docker stop $(docker ps -aq)
+
+docker-compose down
+
+# set docker machine to active
+eval $(docker-machine env ray-app)
+
+# set docker machine to inactive
+eval $(docker-machine env -u)
+
+# remove all images
+docker rmi $(docker images -q)
+
+# copy static files to the docker machine
+docker-machine scp -r static_volume/ ray-app:
+
+#build docker in local
+docker-compose up -d --build
+
+# build and deploy app in production
+docker-compose -f docker-compose.yml -f production.yml up -d --build

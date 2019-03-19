@@ -1,0 +1,146 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Atlassian Info</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- get apricot css -->
+    <link type="text/css" rel="stylesheet" href="https://mango.collegeboard.org/apricot/prod/3.4.0/css/apricot.css" media="all">
+  </head>
+
+  <body class="align">
+
+    <!-- get jquery --> 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- get apricot js -->
+    <script type="text/javascript" src="https://mango.collegeboard.org/apricot/prod/3.4.0/js/apricot.js"></script>
+
+
+    <div class="region region-page-header">
+      <div class="content">
+        <div id="global-header">
+
+        </div>
+      </div>
+    </div>
+     
+    <div class="cb-local-navigation">
+      <div class="container">
+        <nav aria-label="CB Local Navigation" class="cb-desktop-navigation">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="cb-site-name">
+                <a class="title cb-program-name" href="{% url 'info:index' %}">
+                  <span>Atlassian Product Suite Information</span>
+                </a>
+              </div>
+              <ul class="cb-local-menu">
+              
+                <li>
+                  <a href="http://cminfo/cm-reports/">
+                    <i class="cb-glyph cb-north-east" aria-hidden="true"></i>
+                    <span>CMInfo</span>
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+     
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-12 col-md-offset-0">
+
+          <div class="panel cb-panel-blue">
+            <div class="panel-heading">
+              <h3 class="panel-title">Menu</h3>
+            </div>
+            <div class="panel-body">
+              <div class="cb-article-card">
+
+                  <div class="cb-article-item">
+                    <a href="{% url 'info:bitbucket-admin' %}">
+                      <div class="cb-article-image">
+                        <span class="cb-programs-xxx"><span class="cb-glyph cb-glyph-circular cb-online-tool" aria-hidden="true"></span></span>
+                      </div>
+                      <div class="cb-article-content">
+                        <h4>Bitbucket Projects Administrator Finder</h4>
+                      </div>
+                      <p class="cb-article-tag"></p>
+                    </a>
+                  </div>
+
+                  <div class="cb-article-item">
+                    <a href="{% url 'info:confluence-admin' %}">
+                      <div class="cb-article-image">
+                        <span class="cb-programs-xxx"><span class="cb-glyph cb-glyph-circular cb-online-tool" aria-hidden="true"></span></span>
+                      </div>
+                      <div class="cb-article-content">
+                        <h4>Confluence/Wiki Space Administrator Finder</h4>
+                      </div>
+                      <p class="cb-article-tag"></p>
+                    </a>
+                  </div>
+
+                  <div class="cb-article-item">
+                    <a href="{% url 'info:jira-admin' %}">
+                      <div class="cb-article-image">
+                        <span class="cb-programs-xxx"><span class="cb-glyph cb-glyph-circular cb-online-tool" aria-hidden="true"></span></span>
+                      </div>
+                      <div class="cb-article-content">
+                        <h4>Jira Project Administrator Finder</h4>
+                      </div>
+                      <p class="cb-article-tag"></p>
+                    </a>
+                  </div>
+
+                </div>
+
+                <div class="cb-article-card">
+
+                  <div class="cb-article-item">
+                    <a href="...">
+                      <div class="cb-article-image">
+                        <span class="cb-programs-xxx"><span class="cb-glyph cb-glyph-circular cb-note" aria-hidden="true"></span></span>
+                      </div>
+                      <div class="cb-article-content">
+                        <h4>Jira and Confluence Complete FAQ</h4>
+                      </div>
+                      <p class="cb-article-tag"></p>
+                    </a>
+                  </div>
+
+                  <div class="cb-article-item">
+                    <a href="...">
+                      <div class="cb-article-image">
+                        <span class="cb-programs-xxx"><span class="cb-glyph cb-glyph-circular cb-note" aria-hidden="true"></span></span>
+                      </div>
+                      <div class="cb-article-content">
+                        <h4>Bitbucket Complete FAQ</h4>
+                      </div>
+                      <p class="cb-article-tag"></p>
+                    </a>
+                  </div>
+                </div>
+            </div>
+            <div class="panel-footer"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+     
+    <div class="region region-page-footer">
+      <div class="content">
+        <div id="global-footer"></div>
+      </div>
+    </div>
+
+
+  </body>
+</html>

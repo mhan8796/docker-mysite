@@ -1,0 +1,93 @@
+{% load static %}
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Confluence Admins</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- get apricot css -->
+    <link type="text/css" rel="stylesheet" href="https://mango.collegeboard.org/apricot/prod/3.4.0/css/apricot.css" media="all">
+  </head>
+
+  <body>
+    <!-- get jquery --> 
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- get apricot js -->
+    <script type="text/javascript" src="https://mango.collegeboard.org/apricot/prod/3.4.0/js/apricot.js"></script>
+
+
+    <div class="cb-local-navigation">
+      <div class="container">
+        <nav aria-label="CB Local Navigation" class="cb-desktop-navigation">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="cb-site-name">
+                <a class="title cb-program-name" href="{% url 'info:confluence-admin' %}">
+                  <span>Confluence Space Admins</span>
+                </a>
+              </div>
+              <ul class="cb-local-menu">
+              
+                <li>
+                  <a href="http://cminfo/cm-reports/">
+                    <i class="cb-glyph cb-home" aria-hidden="true"></i>
+                    <span>CMInfo</span>
+                  </a>
+                </li>
+
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                    <span>Admin Finder</span>
+                    <i class="cb-glyph cb-down" aria-hidden="true"></i>
+                    <i class="cb-glyph cb-up hidden" aria-hidden="true"></i>
+                  </a>
+                  <ul class="dropdown-menu">
+
+                    <li>
+                      <a href="{% url 'info:bitbucket-admin' %}">
+                        <span>BitBucket Admin Finder</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="{% url 'info:confluence-admin' %}">
+                        <span>Confluence/Wiki Admin Finder</span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="{% url 'info:jira-admin' %}">
+                        <span>Jira Admin Finder</span>
+                      </a>
+                    </li>
+
+                  </ul>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container cb-panel-gray">
+      <div class="cb-item-list cb-item-list-rich">
+        <ul>
+          {% for admin in admins %}
+          <li class="...">{{admin}}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+
+
+  </body>
+</html>
+
+
+
+
+

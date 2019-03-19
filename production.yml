@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  web:
+    restart: always # on PROD
+    volumes:
+      - /home/ubuntu/static_volume:/usr/src/app/static/ # on PROD/Server after scp
+
+
+  nginx:
+    restart: always # on PROD
+    volumes:
+      - /home/ubuntu/static_volume:/usr/src/app/static/ # on PROD/Server after scp
